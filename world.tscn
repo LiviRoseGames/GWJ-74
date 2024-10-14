@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://birmu7ceumlf"]
+
+[ext_resource type="PackedScene" uid="uid://brj5ty84onti0" path="res://hero/hero.tscn" id="1_ndycg"]
+[ext_resource type="Script" path="res://camera/character_camera.gd" id="2_nx5vr"]
+[ext_resource type="Script" path="res://camera/camera_limits.gd" id="3_jbppn"]
+
+[node name="World" type="Node2D"]
+
+[node name="Hero" parent="." instance=ExtResource("1_ndycg")]
+position = Vector2(168, 111)
+
+[node name="CharacterCamera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("2_nx5vr")
+
+[node name="CameraLimits" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -96.0
+offset_top = -53.0
+offset_right = 491.0
+offset_bottom = 269.0
+script = ExtResource("3_jbppn")
