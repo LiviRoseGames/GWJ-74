@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbc7yboqe8844"]
+
+[ext_resource type="PackedScene" uid="uid://deqyyrfu167k6" path="res://levels/Level.tscn" id="1_him2p"]
+[ext_resource type="Texture2D" uid="uid://bx4ovqttwtgq3" path="res://world/forest_tiles.png" id="2_7g077"]
+
+[node name="Level1" instance=ExtResource("1_him2p")]
+
+[node name="ForestTiles" type="Sprite2D" parent="." index="1"]
+scale = Vector2(4.58929, 10.375)
+texture = ExtResource("2_7g077")
