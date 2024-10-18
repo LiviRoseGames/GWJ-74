@@ -101,3 +101,7 @@ autoplay = "fly"
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_d21e0")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
+path_desired_distance = 8.0
+target_desired_distance = 8.0
