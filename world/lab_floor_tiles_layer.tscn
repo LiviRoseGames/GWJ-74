@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://blt4ao3igcocj"]
+
+[ext_resource type="Texture2D" uid="uid://dliinj1ucpw6n" path="res://world/ByPixelatedGlitch/Lab_Tiles.png" id="1_hlo6u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rol6n"]
+texture = ExtResource("1_hlo6u")
+texture_region_size = Vector2i(48, 48)
+0:0/0 = 0
+1:1/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_crpbx"]
+tile_size = Vector2i(48, 48)
+sources/1 = SubResource("TileSetAtlasSource_rol6n")
+
+[node name="LabFloorTilesLayer" type="TileMapLayer"]
+tile_set = SubResource("TileSet_crpbx")
