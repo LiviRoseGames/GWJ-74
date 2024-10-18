@@ -32,6 +32,12 @@ const SIDE_BIAS = 0.1
 @onready var weapon_state: = HeroWeaponState.new().set_actor(self)
 @onready var fsm: = FSM.new().set_state(move_state)
 
+func _enter_tree() -> void:
+	MainInstances.hero = self
+
+func _exit_tree() -> void:
+	MainInstances.hero = null
+
 func _ready() -> void:
 	Events.request_camera_target.emit.call_deferred(remote_transform_2d)
 	
