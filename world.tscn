@@ -16,4 +16,3 @@ script = ExtResource("2_nx5vr")
 [node name="Hero" parent="." instance=ExtResource("1_ndycg")]
 
 [node name="Level1" parent="." instance=ExtResource("4_ltpfh")]
-position = Vector2(295.464, 81.0881)
