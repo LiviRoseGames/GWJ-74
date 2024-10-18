@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://birmu7ceumlf"]
+[gd_scene load_steps=5 format=3 uid="uid://birmu7ceumlf"]
 
+[ext_resource type="Script" path="res://world.gd" id="1_j7ajc"]
 [ext_resource type="PackedScene" uid="uid://brj5ty84onti0" path="res://hero/hero.tscn" id="1_ndycg"]
 [ext_resource type="Script" path="res://camera/character_camera.gd" id="2_nx5vr"]
+[ext_resource type="PackedScene" uid="uid://cbc7yboqe8844" path="res://levels/level_1.tscn" id="4_ltpfh"]
 
-[node name="World" type="Node2D"]
-
-[node name="Hero" parent="." instance=ExtResource("1_ndycg")]
-position = Vector2(168, 111)
+[node name="World" type="Node2D" node_paths=PackedStringArray("current_level")]
+script = ExtResource("1_j7ajc")
+current_level = NodePath("Level1")
 
 [node name="CharacterCamera" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 script = ExtResource("2_nx5vr")
+
+[node name="Hero" parent="." instance=ExtResource("1_ndycg")]
+
+[node name="Level1" parent="." instance=ExtResource("4_ltpfh")]
+position = Vector2(295.464, 81.0881)
