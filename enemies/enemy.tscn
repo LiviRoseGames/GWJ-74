@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://brban7mcf0cby"]
+[gd_scene load_steps=4 format=3 uid="uid://brban7mcf0cby"]
 
 [ext_resource type="Script" path="res://enemies/enemy.gd" id="1_ac7qa"]
+[ext_resource type="Script" path="res://damage_boxes/hitbox.gd" id="2_3k8og"]
+[ext_resource type="Script" path="res://damage_boxes/hurtbox.gd" id="3_cwq7k"]
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -11,3 +13,13 @@ script = ExtResource("1_ac7qa")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_cwq7k")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("2_3k8og")

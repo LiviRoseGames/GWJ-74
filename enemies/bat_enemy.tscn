@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6dfuxs4p4rhh"]
+[gd_scene load_steps=13 format=3 uid="uid://c6dfuxs4p4rhh"]
 
 [ext_resource type="PackedScene" uid="uid://brban7mcf0cby" path="res://enemies/enemy.tscn" id="1_u40vm"]
 [ext_resource type="Texture2D" uid="uid://dg8hrdqs5qgl7" path="res://enemies/bat.png" id="2_axg0j"]
@@ -83,6 +83,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_d21e0"]
 radius = 5.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h18hp"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rusk4"]
+radius = 4.0
+
 [node name="BatEnemy" instance=ExtResource("1_u40vm")]
 script = ExtResource("2_p0vmm")
 movement_stats = ExtResource("3_nvkxl")
@@ -105,3 +112,12 @@ shape = SubResource("CircleShape2D_d21e0")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="3"]
 path_desired_distance = 8.0
 target_desired_distance = 8.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_h18hp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_rusk4")
