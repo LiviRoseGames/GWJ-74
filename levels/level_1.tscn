@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://caljpq3hu38r" path="res://world/lab_tiles_layer.tscn" id="5_cncoa"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mb4e5"]
-vertices = PackedVector2Array(52.7891, 48.9219, -56.4375, 48.0781, -49.5078, -80.0703, 50.1875, -80.9063)
+vertices = PackedVector2Array(161.328, 95.1094, -119.172, 122.969, -122.828, -108.031, 126.563, -108.961)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-59, -90, -67, 58, 63, 59, 60, -91)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-133, -118, -129, 134, 173, 104, 135, -119)])
 source_geometry_mode = 1
 source_geometry_group_name = &"navigation"
 
