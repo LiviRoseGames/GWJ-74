@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6dfuxs4p4rhh"]
+[gd_scene load_steps=12 format=3 uid="uid://c6dfuxs4p4rhh"]
 
 [ext_resource type="PackedScene" uid="uid://brban7mcf0cby" path="res://enemies/enemy.tscn" id="1_u40vm"]
-[ext_resource type="Texture2D" uid="uid://dg8hrdqs5qgl7" path="res://enemies/bat.png" id="2_axg0j"]
 [ext_resource type="Script" path="res://enemies/bat_enemy.gd" id="2_p0vmm"]
 [ext_resource type="Resource" uid="uid://bkqrr05vj8nxc" path="res://enemies/bat_enemy_movement_stats.tres" id="3_nvkxl"]
 
@@ -20,26 +19,9 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_d7j3p"]
-resource_name = "damaged"
-length = 0.1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [5]
-}
-
-[sub_resource type="Animation" id="Animation_tvnei"]
-resource_name = "fly"
-length = 0.4
+[sub_resource type="Animation" id="Animation_kln1h"]
+resource_name = "fly_down"
+length = 0.6
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -49,16 +31,17 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [1, 2, 3, 4]
+"values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_ex3mk"]
-resource_name = "idle"
-length = 0.1
+[sub_resource type="Animation" id="Animation_jc7ce"]
+resource_name = "fly_side"
+length = 0.6
 loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -66,18 +49,36 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_fnrnc"]
+resource_name = "fly_up"
+length = 0.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [9, 10, 11]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y8uh3"]
 _data = {
 "RESET": SubResource("Animation_tnscs"),
-"damaged": SubResource("Animation_d7j3p"),
-"fly": SubResource("Animation_tvnei"),
-"idle": SubResource("Animation_ex3mk")
+"fly_down": SubResource("Animation_kln1h"),
+"fly_side": SubResource("Animation_jc7ce"),
+"fly_up": SubResource("Animation_fnrnc")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d21e0"]
@@ -94,16 +95,10 @@ radius = 4.0
 script = ExtResource("2_p0vmm")
 movement_stats = ExtResource("3_nvkxl")
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_axg0j")
-offset = Vector2(0, -6)
-hframes = 6
-
 [node name="AnimationPlayer" parent="." index="1"]
 libraries = {
 "": SubResource("AnimationLibrary_y8uh3")
 }
-autoplay = "fly"
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(0, -5)

@@ -23,8 +23,3 @@ func physics_process(delta: float) -> void:
 	
 	CharacterMover.move(hero)
 	
-	if Input.is_action_just_pressed("roll"):
-		request_roll.emit()
-	
-	if Input.is_action_just_pressed("weapon"):
-		request_weapon.emit()
